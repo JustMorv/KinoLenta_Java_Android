@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.example.kinolenta.Adapter.FilmListAdapter;
 import com.example.kinolenta.Domain.FilmItem;
 import com.example.kinolenta.Domain.ListFilm;
 import com.example.kinolenta.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
 
         initView();
         sendRequest1();

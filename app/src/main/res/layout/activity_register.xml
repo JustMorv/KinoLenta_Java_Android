@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bacground"
-    tools:context=".Activity.LoginActivity">
-
+    tools:context=".Activity.RegisterActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,22 +19,45 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/backImg"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/bg_circle_darck"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back"
+                    app:tint="@color/white" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Авторизация"
+                android:text="Регистрация"
                 android:textColor="@color/white"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="100dp"
                 android:textSize="50sp"
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/emailet"
+                android:id="@+id/emailEts"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="108dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
@@ -52,7 +73,25 @@
 
 
             <EditText
-                android:id="@+id/passwordet"
+                android:id="@+id/usernameEts"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Username"
+                android:textAlignment="center"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="@drawable/intro_btn_bacground"
+                />
+
+
+            <EditText
+                android:id="@+id/passwordEts"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -68,33 +107,9 @@
                 android:background="@drawable/intro_btn_bacground"
                 />
 
-          <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="32dp"
-              android:orientation="horizontal">
-              <TextView
-                  android:id="@+id/textView4"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="Еще нет аккаунта?"
-                  android:textColor="@color/white"
-                  android:textAlignment="center"
-                  android:textSize="16dp"/>
-              <TextView
-                  android:id="@+id/go_to_register_activity_tv"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="Регистрация"
-                  android:layout_marginStart="5dp"
-                  android:textColor="@color/blue"
-                  android:textAlignment="center"
-                  android:textSize="16dp"/>
-          </LinearLayout>
-
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/login_btn"
+                android:id="@+id/sing_up_btn"
                 style="@android:style/Widget.Button"
                 android:background="@drawable/intro_btn_bacground"
                 android:textColor="@color/white"
@@ -103,10 +118,11 @@
                 android:layout_marginEnd="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Войти"
+                android:text="Зарегистрироваться "
                 android:textSize="22dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

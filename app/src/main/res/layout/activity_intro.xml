@@ -85,7 +85,7 @@
                 android:background="@drawable/backgroun_gradient_2">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button"
+                    android:id="@+id/getLnBtn"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="23dp"

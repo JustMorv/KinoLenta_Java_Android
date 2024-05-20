@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,22 +30,24 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewNewMovies, recyclerViewUpComming;
 
     private RequestQueue mRequestQueue;
-    private StringRequest mStringRequest,mStringRequest2;
+    private StringRequest mStringRequest, mStringRequest2;
     private ProgressBar loading, loading2;
-
+    private ImageView movieAddActiv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
 
         initView();
         sendRequest1();
         sendRequest2();
+
     }
 
     private void sendRequest1() {
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             adapterNewMovies = new FilmListAdapter(items);
             recyclerViewNewMovies.setAdapter(adapterNewMovies);
         }, error -> {
-            Log.i("JustMorv","sendRequest1: " +error.toString());
+            Log.i("JustMorv", "sendRequest1: " + error.toString());
             loading.setVisibility(View.GONE);
         });
         mRequestQueue.add(mStringRequest);
@@ -91,8 +95,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewUpComming = findViewById(R.id.view2);
         recyclerViewUpComming.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        loading  = findViewById(R.id.loading1);
-        loading2  = findViewById(R.id.loading2);
+        loading = findViewById(R.id.loading1);
+        loading2 = findViewById(R.id.loading2);
+        movieAddActiv = findViewById(R.id.movieAddActiv);
+
+        movieAddActiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MovieAddActivity.class));
+            }
+        });
 
 
     }

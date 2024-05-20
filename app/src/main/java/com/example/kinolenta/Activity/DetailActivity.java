@@ -2,6 +2,7 @@ package com.example.kinolenta.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -68,13 +69,13 @@ public class DetailActivity extends AppCompatActivity {
             movieRateTxt.setText(item.getRated());
             MovieTimeTxt.setText(item.getRuntime());
             MovieDateTxt.setText(item.getReleased());
-//            movieSummaryInfo.setText(item.getPlot());
-//            movieActorsInfo.setText(item.getActors());
+            movieSummaryInfo.setText(item.getPlot());
+            movieActorsInfo.setText(item.getActors());
 
-//            if (item.getImages() != null) {
-//                adapterImgList = new ImagesListAdapter(item.getImages());
-//                recyclerView.setAdapter(adapterImgList);
-//            }
+            if (item.getImages() != null) {
+                adapterImgList = new ImagesListAdapter(item.getImages());
+                recyclerView.setAdapter(adapterImgList);
+            }
         }, error -> {
 //            progressBar.setVisibility(View.GONE);
             Log.i("justMorv", "enErrorResponse: " + error.toString());
@@ -93,11 +94,11 @@ public class DetailActivity extends AppCompatActivity {
         MovieTimeTxt = findViewById(R.id.movieTimeTxt);
         MovieDateTxt = findViewById(R.id.movieDateTxt);
 
-//        movieSummaryInfo = findViewById(R.id.movieSummaryInfo);
-//        movieActorsInfo = findViewById(R.id.movieActorsInfo);
+        movieSummaryInfo = findViewById(R.id.Moviesummaryinfo);
+        movieActorsInfo = findViewById(R.id.MovieActorinfo);
         bacImage = findViewById(R.id.backImg);
-//        recyclerView = findViewById(R.id.imagesRecylerView);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView = findViewById(R.id.view5);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         bacImage.setOnClickListener(v -> finish());
     }
 

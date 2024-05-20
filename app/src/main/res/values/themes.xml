@@ -10,7 +10,7 @@
 
     <style name="roundedImageRounded">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">5%</item>
     </style>
 
     <style name="Floating" parent="Widget.Design.FloatingActionButton">

@@ -28,7 +28,6 @@ public class DetailActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
     private ProgressBar progressBar;
     private TextView titleTxt, movieRateTxt, MovieTimeTxt, MovieDateTxt, movieSummaryInfo, movieActorsInfo;
-
     private NestedScrollView scrollView;
     private int idFilm;
     private ShapeableImageView pic1;
@@ -48,12 +47,10 @@ public class DetailActivity extends AppCompatActivity {
 
     private void sendRequest() {
         mRequestQueue = Volley.newRequestQueue(this);
-//        progressBar.setVisibility(View.VISIBLE);
         scrollView.setVisibility(View.GONE);
 
         mStringRequest = new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies/" + idFilm, response -> {
             Gson gson = new Gson();
-//            progressBar.setVisibility(View.GONE);
             scrollView.setVisibility(View.VISIBLE);
             FilmItem item = gson.fromJson(response, FilmItem.class);
 
@@ -77,7 +74,6 @@ public class DetailActivity extends AppCompatActivity {
                 recyclerView.setAdapter(adapterImgList);
             }
         }, error -> {
-//            progressBar.setVisibility(View.GONE);
             Log.i("justMorv", "enErrorResponse: " + error.toString());
         });
 
@@ -86,14 +82,12 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initView() {
         titleTxt = findViewById(R.id.movieNameTxt);
-//        progressBar = findViewById(R.id.detailLoading);
         scrollView = findViewById(R.id.scrollView3);
         pic1 = findViewById(R.id.posterNormalImg);
         pic2 = findViewById(R.id.posterBigImg);
         movieRateTxt = findViewById(R.id.movieRateTxt);
         MovieTimeTxt = findViewById(R.id.movieTimeTxt);
         MovieDateTxt = findViewById(R.id.movieDateTxt);
-
         movieSummaryInfo = findViewById(R.id.Moviesummaryinfo);
         movieActorsInfo = findViewById(R.id.MovieActorinfo);
         bacImage = findViewById(R.id.backImg);
@@ -101,5 +95,4 @@ public class DetailActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         bacImage.setOnClickListener(v -> finish());
     }
-
 }

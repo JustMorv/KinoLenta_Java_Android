@@ -7,7 +7,7 @@
     android:focusableInTouchMode="true"
     android:layout_height="match_parent"
     android:background="@color/main_bacground"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.AccountMainActivity">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -22,47 +22,84 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="start"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/circle_gradient"
+                android:scaleType="centerCrop"
+                android:src="@drawable/account" />
 
             <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Что бы вы хотели посмотреть?"
-                android:textAlignment="center"
+                android:text="Username"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"/>
 
-            <EditText
-                android:id="@+id/editTextText2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="16dp"
-                android:background="@drawable/search_edit_backround"
-                android:drawableEnd="@drawable/search"
-                android:drawablePadding="8dp"
-                android:ems="10"
-                android:hint="Поиск..."
-                android:inputType="text"
-                android:padding="15dp"
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="user@example.com"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(123) 456-7890"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123 Main St, City, Country"
+                android:textSize="16sp"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:text="Новые фильмы"
+                android:layout_marginTop="8dp"
+                android:text="Рекомендации"
                 android:textColor="#ffc107"
                 android:textSize="20sp"
-                android:textStyle="bold"
-
-                />
+                android:textStyle="bold"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -97,52 +134,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:text="Полулярные фильмы"
+                android:layout_marginTop="8dp"
+                android:text="Обратная связь"
                 android:textColor="#ffc107"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="118dp"
+                android:orientation="horizontal"
+                android:gravity="start">
 
-                <ProgressBar
-                    android:id="@+id/loading2"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:visibility="visible" />
+                <ImageView
+                    android:id="@+id/vk_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_vk"
+                    android:contentDescription="@string/vk" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/view2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:minHeight="200dp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="118dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:id="@+id/telegram_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_telegram"
+                    android:contentDescription="@string/telegram" />
 
-                </androidx.recyclerview.widget.RecyclerView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/instagram_icon"
+                    android:layout_width="60dp"
+                    android:padding="5dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_instagram"
+                    android:contentDescription="@string/instagram" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -220,5 +258,6 @@
             app:maxImageSize="30dp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

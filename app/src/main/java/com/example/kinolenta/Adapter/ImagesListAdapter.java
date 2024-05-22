@@ -1,5 +1,4 @@
 package com.example.kinolenta.Adapter;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +14,8 @@ import com.example.kinolenta.R;
 import java.util.List;
 
 public class ImagesListAdapter extends RecyclerView.Adapter<ImagesListAdapter.ViewHolder> {
-    List<String> images;
-    Context context;
+    private List<String> images;
+    private Context context;
 
     public ImagesListAdapter(List<String> images) {
         this.images = images;
@@ -24,18 +23,18 @@ public class ImagesListAdapter extends RecyclerView.Adapter<ImagesListAdapter.Vi
 
     @NonNull
     @Override
-    public ImagesListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholded_ditail_images, parent, false);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-
-        return new ViewHolder(inflate);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_image, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImagesListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        String imageUrl = images.get(position);
         Glide.with(context)
-                .load(images.get(position))
-                .into(holder.pic);
+                .load(imageUrl)
+                .into(holder.imageView);
     }
 
     @Override
@@ -43,12 +42,12 @@ public class ImagesListAdapter extends RecyclerView.Adapter<ImagesListAdapter.Vi
         return images.size();
     }
 
-    public class ViewHolder  extends RecyclerView.ViewHolder{
-        ImageView pic;
-        public ViewHolder(@NonNull View itemView) {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
 
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            pic = itemView.findViewById(R.id.itemImages);
+            imageView = itemView.findViewById(R.id.imageView);
         }
     }
 }

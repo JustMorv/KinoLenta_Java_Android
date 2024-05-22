@@ -215,17 +215,6 @@
                     app:srcCompat="@drawable/back"
                     app:tint="@color/white" />
 
-                <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/bg_circle_darck"
-                    android:padding="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/btn_2"
-                    app:tint="@color/white" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -235,6 +224,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -306,7 +296,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_anchor="@id/imageView3"
-            app:maxImageSize="30dp" />
+            app:maxImageSize="60dp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

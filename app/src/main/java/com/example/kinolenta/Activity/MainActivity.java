@@ -99,12 +99,30 @@ public class MainActivity extends AppCompatActivity {
         loading2 = findViewById(R.id.loading2);
         movieAddActiv = findViewById(R.id.movieAddActiv);
 
+        ImageView startAccount = findViewById(R.id.startAccount);
+
+        ImageView imageView2 =  findViewById(R.id.imageView2);
+        startAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AccountMainActivity.class));
+            }
+        });
+
         movieAddActiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, MovieAddActivity.class));
             }
         });
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FavoritesActivity.class));
+            }
+        });
+
 
 
     }

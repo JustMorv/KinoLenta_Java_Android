@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,41 @@ public class AccountMainActivity extends AppCompatActivity {
 
         initView();
         sendRequest1();
+
+
+
+        ImageView vkIcon = findViewById(R.id.vk_icon);
+        ImageView telegramIcon = findViewById(R.id.telegram_icon);
+        ImageView instagramIcon = findViewById(R.id.instagram_icon);
+
+        vkIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUrl("https://vk.com/mrmorv");
+            }
+        });
+
+        telegramIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUrl("https://web.telegram.org/a/#-1001457945496");
+            }
+        });
+
+        instagramIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUrl("https://www.instagram.com/mr.morvol.ru/?hl=ru");
+            }
+        });
+
+        ImageView bacImage = findViewById(R.id.backImg);
+        bacImage.setOnClickListener(v -> finish());
+    }
+
+    private void openUrl(String url) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
 
     }
 

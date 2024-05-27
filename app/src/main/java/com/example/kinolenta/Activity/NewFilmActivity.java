@@ -1,27 +1,28 @@
+
 package com.example.kinolenta.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.recyclerview.widget.GridLayoutManager;
+        import androidx.recyclerview.widget.LinearLayoutManager;
+        import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.View;
+        import android.widget.ImageView;
+        import android.widget.ProgressBar;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.kinolenta.Adapter.FilmListAdapter;
-import com.example.kinolenta.Domain.ListFilm;
-import com.example.kinolenta.R;
-import com.google.gson.Gson;
+        import com.android.volley.Request;
+        import com.android.volley.RequestQueue;
+        import com.android.volley.toolbox.StringRequest;
+        import com.android.volley.toolbox.Volley;
+        import com.example.kinolenta.Adapter.FilmListAdapter;
+        import com.example.kinolenta.Domain.ListFilm;
+        import com.example.kinolenta.R;
+        import com.google.gson.Gson;
 
-public class FavoritesActivity extends AppCompatActivity {
+public class NewFilmActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter adapterNewMovies;
     private RecyclerView recyclerViewNewMovies;
@@ -38,6 +39,7 @@ public class FavoritesActivity extends AppCompatActivity {
         initView();
         sendRequest1();
 
+
         ImageView movieAddActiv = findViewById(R.id.movieAddActiv);
 
         ImageView startAccount = findViewById(R.id.startAccount);
@@ -50,21 +52,21 @@ public class FavoritesActivity extends AppCompatActivity {
         startAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FavoritesActivity.this, AccountMainActivity.class));
+                startActivity(new Intent(NewFilmActivity.this, AccountMainActivity.class));
             }
         });
 
         movieAddActiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FavoritesActivity.this, ContactActivity.class));
+                startActivity(new Intent(NewFilmActivity.this, ContactActivity.class));
             }
         });
 
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FavoritesActivity.this, FavoritesActivity.class));
+                startActivity(new Intent(NewFilmActivity.this, FavoritesActivity.class));
             }
         });
 
@@ -72,12 +74,13 @@ public class FavoritesActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FavoritesActivity.this, NewFilmActivity.class));
+                startActivity(new Intent(NewFilmActivity.this, NewFilmActivity.class));
             }
         });
 
         ImageView bacImage = findViewById(R.id.backImg);
         bacImage.setOnClickListener(v -> finish());
+
 
     }
 

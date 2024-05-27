@@ -133,46 +133,46 @@
                     android:id="@+id/text4"
                     android:layout_width="395dp"
                     android:layout_height="53dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="8dp"
                     android:gravity="center_vertical"
                     android:padding="5dp"
                     android:text="Подроблнее"
                     android:textColor="@color/white"
                     android:textSize="16dp"
                     app:layout_constraintTop_toBottomOf="@+id/posterBigImg"
-                    tools:layout_editor_absoluteX="-3dp" />
+                    tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
                     android:id="@+id/Moviesummaryinfo"
                     android:layout_width="374dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="104dp"
+                    android:layout_marginTop="68dp"
                     android:gravity="center_vertical"
                     android:padding="5dp"
                     android:text="text"
                     android:textColor="@color/white"
                     android:textSize="14dp"
                     app:layout_constraintTop_toBottomOf="@+id/posterBigImg"
-                    tools:layout_editor_absoluteX="13dp" />
+                    tools:layout_editor_absoluteX="-3dp" />
 
                 <TextView
                     android:id="@+id/text5"
                     android:layout_width="396dp"
                     android:layout_height="37dp"
-                    android:layout_marginTop="156dp"
+                    android:layout_marginTop="120dp"
                     android:gravity="center_vertical"
                     android:padding="5dp"
                     android:text="Актёры"
                     android:textColor="@color/white"
                     android:textSize="16dp"
                     app:layout_constraintTop_toBottomOf="@+id/posterBigImg"
-                    tools:layout_editor_absoluteX="9dp" />
+                    tools:layout_editor_absoluteX="-3dp" />
 
                 <TextView
                     android:id="@+id/MovieActorinfo"
                     android:layout_width="388dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="212dp"
+                    android:layout_marginTop="164dp"
                     android:gravity="center_vertical"
                     android:padding="5dp"
                     android:text="text"
@@ -186,8 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:paddingBottom="118dp"
-                    android:layout_marginBottom="40dp"
+                    android:layout_marginBottom="100dp"
                     app:layout_constraintTop_toBottomOf="@+id/MovieActorinfo"
                     tools:layout_editor_absoluteX="16dp" />
 
@@ -238,7 +237,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#282f32"
+                android:background="#2E2C2D"
                 android:orientation="horizontal">
 
                 <ImageView

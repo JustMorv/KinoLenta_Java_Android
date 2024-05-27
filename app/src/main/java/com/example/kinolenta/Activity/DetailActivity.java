@@ -5,6 +5,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +44,47 @@ public class DetailActivity extends AppCompatActivity {
         idFilm = getIntent().getIntExtra("id", 0);
         initView();
         sendRequest();
+
+
+        ImageView movieAddActiv = findViewById(R.id.movieAddActiv);
+
+        ImageView startAccount = findViewById(R.id.startAccount);
+
+        ImageView imageView2 =  findViewById(R.id.imageView2);
+
+        ImageView imageView =  findViewById(R.id.imageView);
+
+
+        startAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this, AccountMainActivity.class));
+            }
+        });
+
+        movieAddActiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this, ContactActivity.class));
+            }
+        });
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this, FavoritesActivity.class));
+            }
+        });
+
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this, NewFilmActivity.class));
+            }
+        });
+
+
     }
 
     private void sendRequest() {
@@ -93,6 +135,7 @@ public class DetailActivity extends AppCompatActivity {
         bacImage = findViewById(R.id.backImg);
         recyclerView = findViewById(R.id.view5);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        bacImage = findViewById(R.id.backImg);
         bacImage.setOnClickListener(v -> finish());
     }
 }

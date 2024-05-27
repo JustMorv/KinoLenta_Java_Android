@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         mRequestQueue = Volley.newRequestQueue(this);
         loading2.setVisibility(View.VISIBLE);
         mStringRequest2 = new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies?page=3", response -> {
+            Log.i("API_ERROR", "Error: " +mStringRequest2 );
+            Log.v("API_ERROR", "Error: " +mStringRequest2 );
+
             Gson gson = new Gson();
             loading2.setVisibility(View.GONE);
 
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerViewUpComming.setAdapter(adapterUpComming);
         }, error -> {
             loading2.setVisibility(View.GONE);
+            Log.e("API_ERROR", "Error: " + error.toString());
 
         });
 
@@ -102,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
         ImageView startAccount = findViewById(R.id.startAccount);
 
         ImageView imageView2 =  findViewById(R.id.imageView2);
+
+        ImageView imageView =  findViewById(R.id.imageView);
+
+
         startAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         movieAddActiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MovieAddActivity.class));
+                startActivity(new Intent(MainActivity.this, ContactActivity.class));
             }
         });
 
@@ -124,6 +132,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NewFilmActivity.class));
+            }
+        });
 
     }
 }

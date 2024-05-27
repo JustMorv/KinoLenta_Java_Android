@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.kinolenta.R;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +32,9 @@ public class MovieAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_add);
         init();
+
+        ImageView bacImage = findViewById(R.id.backImg);
+        bacImage.setOnClickListener(v -> finish());
     }
 
     private void init() {
